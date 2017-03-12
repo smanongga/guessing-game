@@ -27,8 +27,8 @@
     Guess the number between 1 and 100. We will give you 10 chances or else you will have to start again. I will help you by letting you know if your guess is low or high. How about that? GOOD LUCK!
   </p>
   <form name="guessThatNumberForm">
-    Your Number: <input type="text" name="guessedNumber">
-    <input type="button" value="submit" onClick="guessMyNumber()">
+    Your Number: <input type="text" name="guessedNumber" id="numberInput">
+    <input type="button" value="submit" onClick="guessMyNumber()" id="submitButton">
   </form>
   <div id="pastGuesses"></div>
   <div id="hintMessage"></div>

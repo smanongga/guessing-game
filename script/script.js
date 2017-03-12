@@ -14,11 +14,13 @@ function guessMyNumber() {
 
   var submittedNumber = document.guessThatNumberForm.guessedNumber.value;
 
-  var showNumber = submittedNumber + ' ' + 'Random Number: ' + randomNumber;
+  var showNumber = submittedNumber + " ";
   document.getElementById("pastGuesses").innerHTML += showNumber;
 
    if (submittedNumber == randomNumber) {
      document.getElementById("congratulation").innerHTML = 'Congratulation! You guessed correctly.';
+     document.getElementById('numberInput').disabled = true;
+     document.getElementById('submitButton').disabled = true;
    }
    else if (submittedNumber < randomNumber ){
       document.getElementById("hintMessage").innerHTML = 'You are too low!';
