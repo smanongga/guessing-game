@@ -9,24 +9,40 @@ var numberTurn = 1;
 
 
 
-
 function guessMyNumber() {
 
   var submittedNumber = document.guessThatNumberForm.guessedNumber.value;
 
-  var showNumber = submittedNumber + " ";
-  document.getElementById("pastGuesses").innerHTML += showNumber;
+
+ if (numberTurn <= 10 ) {
+     var showNumber = submittedNumber + " ";
+     document.getElementById("pastGuesses").textContent += showNumber;
+ }
+
+else {
+  stopGame();
+
+}
+
 
    if (submittedNumber == randomNumber) {
-     document.getElementById("congratulation").innerHTML = 'Congratulation! You guessed correctly.';
-     document.getElementById('numberInput').disabled = true;
-     document.getElementById('submitButton').disabled = true;
+     document.getElementById("congratulation").textContent = 'Congratulation! You guessed correctly.';
+     stopGame();
    }
+
    else if (submittedNumber < randomNumber ){
-      document.getElementById("hintMessage").innerHTML = 'You are too low!';
+      document.getElementById("hintMessage").textContent = 'You are too low!';
    }
    else if  (submittedNumber > randomNumber ){
-     document.getElementById("hintMessage").innerHTML = 'You are too high!';
+     document.getElementById("hintMessage").textContent = 'You are too high!';
      }
+
+  numberTurn++;
+}
+
+function stopGame () {
+  document.getElementById('numberInput').disabled = true;
+  document.getElementById('submitButton').disabled = true;
+  document.getElementById("tryAgain").textContent = 'YOU FAIL! GAME OVER!!';
 
 }
